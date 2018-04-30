@@ -17,6 +17,17 @@ import Header from './components/header/';
 */
 
 class App extends Component {
+  constructor(...props) {
+    super(...props)
+
+    // Receiving data
+    console.log(this.props.title);
+    console.log(this.props.name);
+
+    this.state = {
+      todos: [],
+    }
+  }
   render() {
     return (
       <div className="App">
