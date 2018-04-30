@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import TodoList from './components/todo-list/';
+
+/**
+* Component App
+* 1) it's a "Class Component"
+* 2) it return a view layout
+*
+* Documentation:
+* @return {JSX}
+* @author Alfonso Ruiz alfonso.ruiz@walmart.com
+*/
 
 class App extends Component {
   render() {
@@ -8,18 +19,7 @@ class App extends Component {
         <div>
           <h1>TODOS LIST</h1>
         </div>
-        <ul id="todo-ul">
-          <li>
-            <div>
-              <span>FIRST TODO</span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <span>SECOND TODO</span>
-            </div>
-          </li>
-        </ul>
+        <TodoList />
       </div>
     );
   }
