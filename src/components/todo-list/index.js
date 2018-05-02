@@ -10,17 +10,19 @@ import React from 'react';
 * @author Alfonso Ruiz alfonso.ruiz@walmart.com
 */
 
-const TodoList = () => {
+const TodoList = (prop) => {
+    console.log(prop)
+
     return (
         <ul id="todo-ul">
             <li>
                 <div>
-                    <span>FIRST TODO</span>
+                    <span>{prop.todos[0].label}</span>
                 </div>
             </li>
             <li>
                 <div>
-                    <span>SECOND TODO</span>
+                    <span>{prop.todos[1].label}</span>
                 </div>
             </li>
         </ul>

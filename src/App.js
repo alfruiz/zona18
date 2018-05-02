@@ -23,13 +23,6 @@ class App extends Component {
   constructor(...props) {
     super(...props)
 
-    // Receiving data
-    console.log(this.props.title);
-    console.log(this.props.name);
-    // Props is an array -> same as arguments
-    console.log(props);
-    console.log(...props);
-
     /* NEW ES6 FEATURES */
     // // Rest operator
     // const x = { hello: 'hello World', op: 2, wo: 9, est: 999000 };
@@ -48,14 +41,17 @@ class App extends Component {
     // })();
 
     this.state = {
-      todos: [],
+      todos: [
+        { label: 'FIRST TODO - 1' },
+        { label: 'SECOND TODO - 2' },
+      ],
     }
   }
   render() {
     return (
       <div className="App">
         <Header />
-        <TodoList />
+        <TodoList todos={this.state.todos} />
       </div>
     );
   }
