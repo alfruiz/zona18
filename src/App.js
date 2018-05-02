@@ -41,6 +41,7 @@ class App extends Component {
     // })();
 
     this.state = {
+      // ES6 - default params
       todos: [
         { label: 'FIRST TODO - 1' },
       ],
