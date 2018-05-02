@@ -48,6 +48,7 @@ class App extends Component {
     }
 
     // binds
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleComplete = this.handleComplete.bind(this);
   }
 
@@ -59,10 +60,23 @@ class App extends Component {
     this.setState({ todos });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    const todos = [...this.state.todos];
+    todos.push({ label: document.querySelector('#newTodo').value, id: Date.now() });
+    this.setState({ todos });
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
+        <div>
+          <form onSubmit={(event) => { this.handleSubmit(event) }}>
+            <input id="newTodo" type="text" />
+            <button type="submit" value="Submit" >ADD TODO</button>
+          </form>
+        </div>
         <TodoList handleComplete={this.handleComplete} todos={this.state.todos} />
       </div>
     );
