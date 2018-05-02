@@ -11,7 +11,7 @@ const Todo = ({ handleComplete, index, ...todo }) => {
     return (
         <li>
             <div>
-                <span style={{ 'text-decoration': `${todo.complete ? 'line-through' : 'none'}` }} onClick={() => { handleComplete(index); }}>{todo.label}</span>
+                <span style={{ 'textDecoration': `${todo.complete ? 'line-through' : 'none'}` }} onClick={() => { handleComplete(index); }}>{todo.label}</span>
             </div>
         </li >
     );
