@@ -11,18 +11,20 @@ import React from 'react';
 */
 
 const TodoList = ({ todos }) => {
+    // MAP <-- wish return new array
+    const todosView = todos.map((t, i) => {
+        return (
+            <li>
+                <div>
+                    <span>{t.label}</span>
+                </div>
+            </li>
+        );
+    });
+
     return (
         <ul id="todo-ul">
-            <li>
-                <div>
-                    <span>{todos[0].label}</span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>{todos[1].label}</span>
-                </div>
-            </li>
+            {todosView}
         </ul>
     );
 }

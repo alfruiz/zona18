@@ -43,7 +43,6 @@ class App extends Component {
     this.state = {
       todos: [
         { label: 'FIRST TODO - 1' },
-        { label: 'SECOND TODO - 2' },
       ],
     }
   }
