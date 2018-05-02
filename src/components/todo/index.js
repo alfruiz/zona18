@@ -7,13 +7,13 @@ import React from 'react';
  * @return {JSX}
  * @author Alfonso Ruiz alfonso.ruiz@walmart.com
  */
-const Todo = ({ ...todo }) => {
+const Todo = ({ handleComplete, index, ...todo }) => {
     return (
         <li>
             <div>
-                <span>{todo.label}</span>
+                <span style={{ 'text-decoration': `${todo.complete ? 'line-through' : 'none'}` }} onClick={() => { handleComplete(index); }}>{todo.label}</span>
             </div>
-        </li>
+        </li >
     );
 }
 

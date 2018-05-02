@@ -46,13 +46,24 @@ class App extends Component {
         { label: 'FIRST TODO', id: Date.now() },
       ],
     }
+
+    // binds
+    this.handleComplete = this.handleComplete.bind(this);
+  }
+
+  // ES6
+  handleComplete(todoIndex) {
+    const todos = [...this.state.todos];
+    todos[todoIndex].complete = !todos[todoIndex].complete;
+    // ES6 todos: todos is equal to todos
+    this.setState({ todos });
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <TodoList todos={this.state.todos} />
+        <TodoList handleComplete={this.handleComplete} todos={this.state.todos} />
       </div>
     );
   }
