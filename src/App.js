@@ -30,13 +30,22 @@ class App extends Component {
     console.log(props);
     console.log(...props);
 
-    // Rest operator ES6 -- EXTRA FEATURE --
+    /* NEW ES6 FEATURES */
+    // // Rest operator
     // const x = { hello: 'hello World', op: 2, wo: 9, est: 999000 };
     // const { hello, ...rest } = x;
     // console.log('\n', hello, rest);
-    // Spread
+    // // Spread operator
     // const xCopy = { ...x };
     // console.log('\n', xCopy);
+    // // Fat Arrow & this
+    // window.z = this;
+    // this.try1 = (function () {
+    //   return this;
+    // })();
+    // this.try2 = (() => {
+    //   return this;
+    // })();
 
     this.state = {
       todos: [],

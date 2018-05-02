@@ -10,7 +10,7 @@ import React from 'react';
 * @author Alfonso Ruiz alfonso.ruiz@walmart.com
 */
 
-const Header = function () {
+const Header = () => {
     return (
         <div>
             <h1>TODOS LIST</h1>

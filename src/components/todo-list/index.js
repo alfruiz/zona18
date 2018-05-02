@@ -10,7 +10,7 @@ import React from 'react';
 * @author Alfonso Ruiz alfonso.ruiz@walmart.com
 */
 
-const TodoList = function () {
+const TodoList = () => {
     return (
         <ul id="todo-ul">
             <li>
