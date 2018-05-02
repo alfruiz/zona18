@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Components
+import Todo from './../todo/';
+
 /**
 * Component TodoList
 * 1) it's a "Functional component"
@@ -14,13 +17,9 @@ import React from 'react';
 // ES6 - default params todos as empty array
 const TodoList = ({ todos = [] }) => {
     // MAP <-- will return new array of JSX items
-    const todosView = todos.map((t, i) => {
+    const todosView = todos.map((todo) => {
         return (
-            <li key={`${t.label}-${i}`}>
-                <div>
-                    <span>{t.label}</span>
-                </div>
-            </li>
+            <Todo key={todo.id} {...todo} />
         );
     });
 
