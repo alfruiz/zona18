@@ -17,12 +17,26 @@ import Header from './components/header/';
 */
 
 class App extends Component {
+  /**
+   * @param {*} props
+   */
   constructor(...props) {
     super(...props)
 
     // Receiving data
     console.log(this.props.title);
     console.log(this.props.name);
+    // Props is an array -> same as arguments
+    console.log(props);
+    console.log(...props);
+
+    // Rest operator ES6 -- EXTRA FEATURE --
+    // const x = { hello: 'hello World', op: 2, wo: 9, est: 999000 };
+    // const { hello, ...rest } = x;
+    // console.log('\n', hello, rest);
+    // Spread
+    // const xCopy = { ...x };
+    // console.log('\n', xCopy);
 
     this.state = {
       todos: [],
