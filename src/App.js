@@ -4,6 +4,7 @@ import './App.css';
 // Components
 import TodoList from './components/todo-list/';
 import Header from './components/header/';
+import TodoForm from './components/todo-form';
 
 
 /**
@@ -48,7 +49,9 @@ class App extends Component {
     }
 
     // binds
+    this.handleModify = this.handleModify.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleComplete = this.handleComplete.bind(this);
   }
 
@@ -60,24 +63,35 @@ class App extends Component {
     this.setState({ todos });
   }
 
+  handleModify(todoIndex) {
+    const todos = [...this.state.todos];
+    todos[todoIndex].toModify = !todos[todoIndex].toModify;
+    // ES6 todos: todos is equal to todos
+    this.setState({ todos });
+  }
+
+  handleChange(event, todoIndex) {
+    const todos = [...this.state.todos];
+    todos[todoIndex].label = event.target.value;
+    // ES6 todos: todos is equal to todos
+    this.setState({ todos });
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const todos = [...this.state.todos];
     todos.push({ label: document.querySelector('#newTodo').value, id: Date.now() });
+    // ES6 todos: todos is equal to todos
     this.setState({ todos });
+    document.querySelector('#newTodo').value = '';
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <div>
-          <form onSubmit={(event) => { this.handleSubmit(event) }}>
-            <input id="newTodo" type="text" />
-            <button type="submit" value="Submit" >ADD TODO</button>
-          </form>
-        </div>
-        <TodoList handleComplete={this.handleComplete} todos={this.state.todos} />
+        <TodoForm handleSubmit={this.handleSubmit} />
+        <TodoList handleComplete={this.handleComplete} handleModify={this.handleModify} handleChange={this.handleChange} todos={this.state.todos} />
       </div>
     );
   }

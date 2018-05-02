@@ -15,11 +15,11 @@ import Todo from './../todo/';
 */
 
 // ES6 - default params todos as empty array
-const TodoList = ({ todos = [], handleComplete }) => {
+const TodoList = ({ todos = [], handleComplete, handleModify, handleChange }) => {
     // MAP <-- will return new array of JSX items
     const todosView = todos.map((todo, i) => {
         return (
-            <Todo key={todo.id} handleComplete={handleComplete} index={i} {...todo} />
+            <Todo key={todo.id} handleComplete={handleComplete} handleModify={handleModify} handleChange={handleChange} index={i} {...todo} />
         );
     });
 

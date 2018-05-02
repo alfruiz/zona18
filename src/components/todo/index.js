@@ -7,13 +7,34 @@ import React from 'react';
  * @return {JSX}
  * @author Alfonso Ruiz alfonso.ruiz@walmart.com
  */
-const Todo = ({ handleComplete, index, ...todo }) => {
-    return (
-        <li>
+const Todo = ({ handleComplete, handleModify, handleChange, index, ...todo }) => {
+    let todoView;
+    if (todo.toModify) {
+        todoView = (
+            <div>
+                <span >
+                    <input type="text" value={todo.label} onChange={(event) => { handleChange(event, index); }} />
+                </span>
+                <span>
+                    <button onClick={() => { handleModify(index); }}>C</button>
+                </span>
+            </div>
+        );
+    } else {
+        todoView = (
             <div>
                 <span style={{ 'textDecoration': `${todo.complete ? 'line-through' : 'none'}` }} onClick={() => { handleComplete(index); }}>{todo.label}</span>
+                <span>
+                    <button onClick={() => { handleModify(index); }}>C</button>
+                </span>
             </div>
-        </li >
+        )
+    }
+
+    return (
+        <li>
+            {todoView}
+        </li>
     );
 }
 
