@@ -6,7 +6,6 @@ import TodoList from './components/todo-list/';
 import Header from './components/header/';
 import TodoForm from './components/todo-form';
 
-
 /**
 * Component App
 * 1) it's a "Class Component"
@@ -89,7 +88,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header number={this.state.todos.length} />
         <TodoForm handleSubmit={this.handleSubmit} />
         <TodoList handleComplete={this.handleComplete} handleModify={this.handleModify} handleChange={this.handleChange} todos={this.state.todos} />
       </div>

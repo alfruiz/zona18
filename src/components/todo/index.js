@@ -3,6 +3,12 @@ import React from 'react';
 
 /**
  * component TODO
+ * 1) it's a "Functional component"
+ * 2) it return a view layout
+ * @param {function} handleComplete
+ * @param {function} handleModify
+ * @param {function} handleChange
+ * @param {number} index
  * @param {object} todo
  * @return {JSX}
  * @author Alfonso Ruiz alfonso.ruiz@walmart.com

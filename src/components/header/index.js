@@ -10,10 +10,10 @@ import React from 'react';
 * @author Alfonso Ruiz alfonso.ruiz@walmart.com
 */
 
-const Header = () => {
+const Header = ({ number }) => {
     return (
         <div>
-            <h1>TODOS LIST</h1>
+            <h1>TODOS LIST ({number})</h1>
         </div>
     );
 }
