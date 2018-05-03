@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 /**
  * component TODO
  * 1) it's a "Functional component"
@@ -16,30 +15,34 @@ import React from 'react';
 const Todo = ({ handleComplete, handleModify, handleChange, index, ...todo }) => {
     let todoView;
     if (todo.toModify) {
-        todoView = (
-            <div>
-                <span >
-                    <input type="text" value={todo.label} onChange={(event) => { handleChange(event, index); }} />
-                </span>
-                <span>
-                    <button onClick={() => { handleModify(index); }}>C</button>
-                </span>
-            </div>
-        );
+        todoView = [
+            <span key="todo-input">
+                <input type="text" value={todo.label} onChange={(event) => { handleChange(event, index); }} />
+            </span>
+        ];
     } else {
-        todoView = (
-            <div>
-                <span style={{ 'textDecoration': `${todo.complete ? 'line-through' : 'none'}` }} onClick={() => { handleComplete(index); }}>{todo.label}</span>
-                <span>
-                    <button onClick={() => { handleModify(index); }}>C</button>
-                </span>
-            </div>
-        )
+        todoView = [
+            <span
+                key="todo-input"
+                style={{ 'textDecoration': `${todo.complete ? 'line-through' : 'none'}` }}
+                onClick={() => { handleComplete(index); }}>
+                {todo.label}
+            </span>
+        ]
+
     }
+
+    todoView.unshift(
+        <span key="todo-button">
+            <button onClick={() => { handleModify(index); }}>C</button>
+        </span>
+    );
 
     return (
         <li>
-            {todoView}
+            <div>
+                {todoView}
+            </div>
         </li>
     );
 }

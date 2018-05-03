@@ -22,7 +22,14 @@ const TodoList = ({ todos = [], handleComplete, handleModify, handleChange }) =>
     // MAP <-- will return new array of JSX items
     const todosView = todos.map((todo, i) => {
         return (
-            <Todo key={todo.id} handleComplete={handleComplete} handleModify={handleModify} handleChange={handleChange} index={i} {...todo} />
+            <Todo
+                key={todo.id}
+                handleComplete={handleComplete}
+                handleModify={handleModify}
+                handleChange={handleChange}
+                index={i}
+                {...todo}
+            />
         );
     });
 

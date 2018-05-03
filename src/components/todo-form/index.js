@@ -11,11 +11,11 @@ import React from 'react';
 * @author Alfonso Ruiz alfonso.ruiz@walmart.com
 */
 
-const TodoForm = ({ handleSubmit }) => {
+const TodoForm = ({ handleSubmit, inputRef }) => {
     return (
         <div>
             <form onSubmit={(event) => { handleSubmit(event) }}>
-                <input id="newTodo" type="text" />
+                <input id="newTodo" type="text" ref={inputRef} />
                 <button type="submit" value="Submit" >ADD TODO</button>
             </form>
         </div>
