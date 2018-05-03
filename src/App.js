@@ -17,6 +17,7 @@ import TodoForm from './components/todo-form';
 */
 
 class App extends Component {
+  // ES7
   state = {
     todos: [
       { label: 'finish todo using es7', id: Date.now() },
@@ -27,7 +28,7 @@ class App extends Component {
     window.z = this;
   }
 
-  // ES6
+  // ES7
   handleComplete = todoIndex => {
     const todos = [...this.state.todos];
     todos[todoIndex].complete = !todos[todoIndex].complete;
