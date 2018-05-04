@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import styles from './App.css';
 
 // Components
 import TodoList from './components/todo-list/';
@@ -22,10 +22,6 @@ class App extends Component {
     todos: [
       { label: 'finish todo using es7', id: Date.now() },
     ]
-  }
-
-  componentDidMount() {
-    window.z = this;
   }
 
   // ES7
@@ -61,7 +57,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={styles.App}>
         <Header number={this.state.todos.length} />
         <TodoForm handleSubmit={this.handleSubmit} inputRef={el => this.inputElement = el} />
         <TodoList handleComplete={this.handleComplete} handleModify={this.handleModify} handleChange={this.handleChange} todos={this.state.todos} />

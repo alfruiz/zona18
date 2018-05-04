@@ -1,1 +1,28 @@
-.todo {}
+.label {
+    margin-left: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.labelComplete {
+    text-decoration: line-through !important;
+}
+
+.label:hover {
+    text-decoration: underline;
+}
+
+.todoInput {
+    font-size: 17.5px;
+    padding: 0;
+    border-width: 0.5px;
+    padding-left: 1px;
+}
+
+.todoButton {
+    background-color: #cccccc;
+    color: white;
+    padding: 4px 20px;
+    border-radius: 5%;
+}

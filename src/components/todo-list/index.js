@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './styles.css';
+
 // Components
 import Todo from './../todo/';
 
@@ -34,7 +36,7 @@ const TodoList = ({ todos = [], handleComplete, handleModify, handleChange }) =>
     });
 
     return (
-        <ul id="todo-ul">
+        <ul id={styles.todo}>
             {todosView}
         </ul>
     );
