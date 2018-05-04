@@ -49,7 +49,7 @@ const Todo = ({ handleComplete, handleModify, handleChange, index, ...todo }) =>
     );
 
     return (
-        <li>
+        <li className={styles.li}>
             <div>
                 {todoView}
             </div>
