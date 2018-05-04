@@ -36,6 +36,10 @@ class App extends Component {
     this.setState({ todos: defaultTodos });
   }
 
+  componentWillReceiveProps() {
+    console.log('[APP] :: componentWillReceiveProps    ', '3', this.props);
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     console.log('[APP] :: shouldComponentUpdate', '2', this.state, nextState);
     // If it returns false, doesnt re-render

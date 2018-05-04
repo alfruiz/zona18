@@ -12,6 +12,10 @@ import React, { Component } from 'react';
 */
 // const TodoForm = ({ handleSubmit, inputRef }) => {
 class TodoForm extends Component {
+    componentWillReceiveProps() {
+        console.log('[TodoForm] :: componentWillReceiveProps ', '3', this.props);
+    }
+
     shouldComponentUpdate() {
         console.log('[TodoForm] :: shouldComponentUpdate');
         return false;
