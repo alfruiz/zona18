@@ -28,12 +28,26 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log('[APP] :: componentWillMount ', '1', this.state);
+    console.log('[APP] :: componentWillMount   ', '1', this.state);
   }
 
   componentDidMount() {
-    console.log('[APP] :: componentDidMount  ', '1', this.state);
+    console.log('[APP] :: componentDidMount    ', '1', this.state);
     this.setState({ todos: defaultTodos });
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[APP] :: shouldComponentUpdate', '2', this.state, nextState);
+    // If it returns false, doesnt re-render
+    return true
+  }
+
+  componentWillUpdate() {
+    console.log('[APP] :: componentWillUpdate', '2 x', this.state);
+  }
+
+  componentDidUpdate() {
+    console.log('[APP] :: componentDidUpdate', '2 x', this.state);
   }
 
   // ES7
@@ -68,7 +82,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('[APP] :: render \t\t\t', '1', this.state);
+    console.log('[APP] :: render\t\t\t\t  ', '1', this.state);
     return (
       <div className={styles.App}>
         <Header number={this.state.todos.length} />
