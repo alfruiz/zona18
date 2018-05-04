@@ -24,8 +24,16 @@
     padding-left: 1px;
 }
 
-.todoButton {
+.changeButton {
     background-color: #cccccc;
+    color: white;
+    padding: 4px 20px;
+    border-radius: 5%;
+}
+
+.removeButton {
+    margin-left: 5px;
+    background-color: #f5353582;
     color: white;
     padding: 4px 20px;
     border-radius: 5%;

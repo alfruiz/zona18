@@ -20,7 +20,7 @@ import Todo from './../todo/';
  */
 
 // ES6 - default params todos as empty array
-const TodoList = ({ todos = [], handleComplete, handleModify, handleChange }) => {
+const TodoList = ({ todos = [], handleComplete, handleModify, handleChange, handleRemove }) => {
     // MAP <-- will return new array of JSX items
     const todosView = todos.map((todo, i) => {
         return (
@@ -29,8 +29,9 @@ const TodoList = ({ todos = [], handleComplete, handleModify, handleChange }) =>
                 handleComplete={handleComplete}
                 handleModify={handleModify}
                 handleChange={handleChange}
+                handleRemove={handleRemove}
                 index={i}
-                {...todo}
+                todo={todo}
             />
         );
     });

@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   componentWillUpdate() {
-    console.log('[APP] :: componentWillUpdate', '2 x', this.state);
+    console.log('[APP] :: componentWillUpdate  ', '2 x', this.state);
   }
 
   componentDidUpdate() {
@@ -58,6 +58,13 @@ class App extends Component {
   handleComplete = todoIndex => {
     const todos = [...this.state.todos];
     todos[todoIndex].complete = !todos[todoIndex].complete;
+    // ES6 todos: todos is equal to todos
+    this.setState({ todos });
+  }
+
+  handleRemove = todoIndex => {
+    const todos = [...this.state.todos];
+    todos.splice(todoIndex, 1);
     // ES6 todos: todos is equal to todos
     this.setState({ todos });
   }
@@ -89,9 +96,20 @@ class App extends Component {
     console.log('[APP] :: render\t\t\t\t  ', '1', this.state);
     return (
       <div className={styles.App}>
-        <Header number={this.state.todos.length} />
-        <TodoForm handleSubmit={this.handleSubmit} inputRef={el => this.inputElement = el} />
-        <TodoList handleComplete={this.handleComplete} handleModify={this.handleModify} handleChange={this.handleChange} todos={this.state.todos} />
+        <Header
+          number={this.state.todos.length}
+        />
+        <TodoForm
+          handleSubmit={this.handleSubmit}
+          inputRef={el => this.inputElement = el}
+        />
+        <TodoList
+          handleComplete={this.handleComplete}
+          handleModify={this.handleModify}
+          handleChange={this.handleChange}
+          handleRemove={this.handleRemove}
+          todos={this.state.todos}
+        />
       </div>
     );
   }
