@@ -6,6 +6,9 @@ import TodoList from './components/todo-list/';
 import Header from './components/header/';
 import TodoForm from './components/todo-form';
 
+// Simulate JSON
+import defaultTodos from './mocks/todos/';
+
 /**
 * Component App
 * 1) it's a "Class Component"
@@ -22,6 +25,15 @@ class App extends Component {
     todos: [
       { label: 'finish todo using es7', id: Date.now() },
     ]
+  }
+
+  componentWillMount() {
+    console.log('[APP] :: componentWillMount ', '1', this.state);
+  }
+
+  componentDidMount() {
+    console.log('[APP] :: componentDidMount  ', '1', this.state);
+    this.setState({ todos: defaultTodos });
   }
 
   // ES7
@@ -56,6 +68,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('[APP] :: render \t\t\t', '1', this.state);
     return (
       <div className={styles.App}>
         <Header number={this.state.todos.length} />
